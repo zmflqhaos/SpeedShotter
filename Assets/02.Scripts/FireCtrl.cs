@@ -45,6 +45,13 @@ public class FireCtrl : MonoBehaviour
     [SerializeField]
     private int current_damage = 10;
 
+    private bool _isDead;
+    public bool IsDead
+    {
+        get { return _isDead; }
+        set { _isDead = value; }
+    }
+
     public int CUR_DAMAGE
     {
         get { return current_damage; }
@@ -74,6 +81,7 @@ public class FireCtrl : MonoBehaviour
 
     void Update()
     {
+        if (_isDead) return;
         // 마우스 왼쪽 버튼 클릭 했을 때, 
         if( Input.GetMouseButton(0) && cool<=0 && current_magazine>0&&!_isReloading)
         {

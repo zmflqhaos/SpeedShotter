@@ -1,49 +1,5 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &1774822812
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1774822813}
-  - component: {fileID: 1774822814}
-  m_Layer: 0
-  m_Name: attack
-  m_TagString: PUNCH
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &1774822813
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1774822812}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0.5, z: 0.5}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 4885079432260988}
-  m_RootOrder: 2
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!135 &1774822814
-SphereCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1774822812}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Radius: 0.3
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &1019367587621702
 GameObject:
   m_ObjectHideFlags: 0
@@ -109,7 +65,6 @@ Transform:
   m_Children:
   - {fileID: 4491811072490378}
   - {fileID: 4835855552950442}
-  - {fileID: 1774822813}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -146,8 +101,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   item: {fileID: 3045174524699642711, guid: fe3c6fc24f8d2c04f8b201278f8c6675, type: 3}
   state: 0
-  traceDis: 250
-  attackDis: 3
+  traceDis: 200
+  attackDis: 2
   isDead: 0
   initHp: 30
 --- !u!136 &668589844
@@ -174,11 +129,11 @@ NavMeshAgent:
   m_Enabled: 1
   m_AgentTypeID: 0
   m_Radius: 0.5
-  m_Speed: 7
-  m_Acceleration: 8
+  m_Speed: 11
+  m_Acceleration: 25
   avoidancePriority: 50
-  m_AngularSpeed: 160
-  m_StoppingDistance: 3
+  m_AngularSpeed: 500
+  m_StoppingDistance: 2
   m_AutoTraverseOffMeshLink: 1
   m_AutoBraking: 1
   m_AutoRepath: 1
@@ -198,7 +153,7 @@ GameObject:
   - component: {fileID: 137967903436195398}
   m_Layer: 0
   m_Name: Slime
-  m_TagString: Untagged
+  m_TagString: PUNCH
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -532,9 +487,10 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4174967432776898}
+  - component: {fileID: 6341422565325047090}
   m_Layer: 0
   m_Name: EyeCTRL
-  m_TagString: Untagged
+  m_TagString: PUNCH
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -556,3 +512,16 @@ Transform:
   m_Father: {fileID: 4101645566317300}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!135 &6341422565325047090
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1965507997515136}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 0.3
+  m_Center: {x: -0.1, y: 0, z: 0}

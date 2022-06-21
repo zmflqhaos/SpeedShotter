@@ -38,11 +38,11 @@ public class Item : MonoBehaviour
         {
             if(_IsBullet)
             {
-                FireCtrl.Instance.ChangeBulletAndDamage(200, -2);
+                FireCtrl.Instance.ChangeBulletAndDamage(60, -3);
             }
             else
             {
-                FireCtrl.Instance.ChangeBulletAndDamage(-200, 2);
+                FireCtrl.Instance.ChangeBulletAndDamage(-90, 2);
             }
             Destroy(gameObject);
         }

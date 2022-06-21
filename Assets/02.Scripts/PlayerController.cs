@@ -13,8 +13,6 @@ public class PlayerController : MonoBehaviour
     private Transform camView;
     [SerializeField]
     private float jumpPower;
-    [SerializeField]
-    private float boost;
 
     private readonly float initHP = 100.0f;
     public float currHp;
@@ -26,10 +24,9 @@ public class PlayerController : MonoBehaviour
     {
         Cursor.visible = false;
         turnSpeed = 0.0f;
-        boost = 0;
+        FireCtrl.Instance.IsDead = false;
         yield return new WaitForSeconds(0.3f);
         turnSpeed = 4.0f;
-
         currHp = initHP;
 
         hpBar = GameObject.FindGameObjectWithTag("HPBAR")?.GetComponent<Image>();
@@ -38,6 +35,7 @@ public class PlayerController : MonoBehaviour
 
     void Update()
     {
+        if (FireCtrl.Instance.IsDead) return;
         float h = Input.GetAxis("Horizontal");
         float v = Input.GetAxis("Vertical");
 
@@ -46,7 +44,7 @@ public class PlayerController : MonoBehaviour
 
         if (!_isDashing)
         {
-            transform.Translate(moveDir * (moveSpeed+boost) * Time.deltaTime);
+            transform.Translate(moveDir * moveSpeed * Time.deltaTime);
         }
 
         float yRotateSize = Input.GetAxis("Mouse X") * turnSpeed;
@@ -63,21 +61,13 @@ public class PlayerController : MonoBehaviour
             if(Physics.Raycast(transform.position, Vector3.down, 0.05f))
                 rigid.velocity = new Vector3(rigid.velocity.x, jumpPower, rigid.velocity.x);
         }
-        if(Input.GetKeyDown(KeyCode.LeftShift))
-        {
-            boost = moveSpeed;
-        }
-        if(Input.GetKeyUp(KeyCode.LeftShift))
-        {
-            boost = 0;
-        }
     }
 
     private void OnTriggerEnter(Collider other)
     {
         if(other.CompareTag("PUNCH")&&currHp>=0f)
         {
-            currHp -= 5f;
+            currHp -= 10f;
             Debug.Log($"Player HP = {currHp}");
             DisplayHP();
             if(currHp<=0f)
@@ -90,7 +80,7 @@ public class PlayerController : MonoBehaviour
     private void PlayerDie()
     {
         Debug.Log("DIE");
-
+        FireCtrl.Instance.IsDead = true;
         GameObject[] monsters = GameObject.FindGameObjectsWithTag("MONSTER");
         foreach(GameObject monster in monsters)
         {
