@@ -4,9 +4,6 @@ using UnityEngine;
 
 public class BulletCtrl : MonoBehaviour
 {
-    // 총알 파괴력
-    public int damage;
-
     // 총알 발사 힘
     public float force = 1500.0f;
 
@@ -19,7 +16,6 @@ public class BulletCtrl : MonoBehaviour
         Destroy(gameObject, deathTime);
         bulletRigidbody = GetComponent<Rigidbody>();
         bulletTransform = GetComponent<Transform>();
-        damage = FireCtrl.Instance.CUR_DAMAGE;
         // 총알의 전진방향으로 힘을 가한다.
         bulletRigidbody.AddForce(bulletTransform.forward * force);
     }

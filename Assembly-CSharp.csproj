@@ -9,7 +9,7 @@
     <ProductVersion>10.0.20506</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
     <RootNamespace></RootNamespace>
-    <ProjectGuid>{0BCAEE44-2C44-CA58-E30F-5279705A28FF}</ProjectGuid>
+    <ProjectGuid>{E8A82BEA-48E1-D28E-DE4A-5F409B64F39F}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <AssemblyName>Assembly-CSharp</AssemblyName>
@@ -56,6 +56,7 @@
     <Analyzer Include="C:\Program Files (x86)\Microsoft Visual Studio Tools for Unity\16.0\Analyzers\Microsoft.Unity.Analyzers.dll" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Assets\02.Scripts\Item.cs" />
     <Compile Include="Assets\02.Scripts\FollowCamera.cs" />
     <Compile Include="Assets\02.Scripts\TotemCtrl.cs" />
     <Compile Include="Assets\02.Scripts\GameManger.cs" />
@@ -75,7 +76,6 @@
     <Compile Include="Assets\02.Scripts\RemoveBullet.cs" />
     <Compile Include="Assets\02.Scripts\FireCtrl.cs" />
     <Compile Include="Assets\03.Prefabs\EffectExamples\Shared\Scripts\GunAim.cs" />
-    <Compile Include="Assets\02.Scripts\Item.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />

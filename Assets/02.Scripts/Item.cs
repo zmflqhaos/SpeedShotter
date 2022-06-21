@@ -27,6 +27,11 @@ public class Item : MonoBehaviour
         }
     }
 
+    private void Update()
+    {
+        transform.Rotate(0, 0.8f, 0);    
+    }
+
     private void OnCollisionEnter(Collision collision)
     {
         if(collision.collider.CompareTag("PLAYER"))

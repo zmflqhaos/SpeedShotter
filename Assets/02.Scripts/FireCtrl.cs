@@ -39,6 +39,8 @@ public class FireCtrl : MonoBehaviour
     [SerializeField]
     private TextMeshProUGUI bulletText;
     [SerializeField]
+    private TextMeshProUGUI damageText;
+    [SerializeField]
     private Image fill;
     [SerializeField]
     private int current_damage = 10;
@@ -85,6 +87,7 @@ public class FireCtrl : MonoBehaviour
         }
         cool -= Time.deltaTime;
         bulletText.SetText($"{current_magazine} / {current_bullet}");
+        damageText.SetText($"Damage : {current_damage}");
         if(fill.fillAmount>=0)
         {
             fill.fillAmount -= Time.deltaTime / reloadTime;
@@ -143,6 +146,5 @@ public class FireCtrl : MonoBehaviour
     {
         current_bullet += curBullet;
         current_damage += damage;
-        bulletText.SetText($"{current_magazine} / {current_bullet}");
     }
 }

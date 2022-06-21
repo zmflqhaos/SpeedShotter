@@ -113,9 +113,9 @@ public class MonsterCtrl : MonoBehaviour
                     {
                         com.enabled = false;
                     }
-                    GiveItem();
                     yield return new WaitForSeconds(0.9f);
-                    this.gameObject.SetActive(false);
+                    GiveItem();
+                    gameObject.SetActive(false);
                     break;
                 case State.PLAYERDIE:
                     StopAllCoroutines();
@@ -134,7 +134,7 @@ public class MonsterCtrl : MonoBehaviour
         if(collision.collider.CompareTag("BULLET"))
         {
             Destroy(collision.gameObject);
-
+            StartCoroutine(HitStop());
             anim.SetTrigger(hashHit);
 
             Vector3 pos = collision.GetContact(0).point;
@@ -142,8 +142,8 @@ public class MonsterCtrl : MonoBehaviour
 
             ShowBloodEffect(pos, rot);
 
-            currHp -= collision.gameObject.GetComponent<BulletCtrl>().damage;
-            if(currHp==0)
+            currHp -= FireCtrl.Instance.CUR_DAMAGE;
+            if(currHp<=0)
             {
                 state = State.DIE;
                 GameManger.Instance().DisplayScore(997);
@@ -184,9 +184,17 @@ public class MonsterCtrl : MonoBehaviour
     private void GiveItem()
     {
         float rand = Random.Range(0, 100f);    
-        if(rand>0)
+        if(rand>70)
         {
-            Instantiate(item, transform.parent);
+            GameObject _item = Instantiate(item, transform);
+            _item.transform.SetParent(null);
         }
+    }
+
+    private IEnumerator HitStop()
+    {
+        agent.isStopped = true;
+        yield return new WaitForSeconds(0.2f);
+        agent.isStopped = false;
     }
 }
