@@ -18,6 +18,7 @@ public class MonsterCtrl : MonoBehaviour
     public float traceDis = 10f;
     public float attackDis = 2f;
     public bool isDead = false;
+    public SphereCollider hitCol;
 
     private Transform monsterTrs;
     private Transform playerTrs;
@@ -108,15 +109,17 @@ public class MonsterCtrl : MonoBehaviour
                 case State.DIE:
                     isDead = true;
                     agent.isStopped = true;
-                    anim.SetTrigger(hashDie);
                     GetComponent<CapsuleCollider>().enabled = false;
+                    anim.SetTrigger(hashDie);
+                    hitCol.enabled = false;
                     SphereCollider[] components = GetComponentsInChildren<SphereCollider>();
                     foreach(SphereCollider com in components)
                     {
                         com.enabled = false;
                     }
-                    yield return new WaitForSeconds(0.9f);
+                    yield return new WaitForSeconds(0.45f);
                     GiveItem();
+                    yield return new WaitForSeconds(0.45f);
                     gameObject.SetActive(false);
                     break;
                 case State.PLAYERDIE:

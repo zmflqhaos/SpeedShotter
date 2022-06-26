@@ -60,7 +60,7 @@ public class PlayerController : MonoBehaviour
 
             if (Input.GetKey(KeyCode.Space))
             {
-                if (Physics.Raycast(transform.position, Vector3.down, 0.1f))
+                if (Physics.Raycast(transform.position, Vector3.down, 0.2f))
                     rigid.velocity = new Vector3(rigid.velocity.x, jumpPower, rigid.velocity.x);
             }
         }

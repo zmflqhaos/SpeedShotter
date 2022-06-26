@@ -23,8 +23,10 @@ ScriptsOnlyBuild:
     UnityEditor.Graphs.dll:
     - UnityEditor.Graphs.AnimationBlendTree.Graph
     - UnityEditor.Graphs.AnimationBlendTree.GraphGUI
+    - UnityEditor.Graphs.AnimationStateMachine.AnyStateNode
     - UnityEditor.Graphs.AnimationStateMachine.Graph
     - UnityEditor.Graphs.AnimationStateMachine.GraphGUI
+    - UnityEditor.Graphs.AnimationStateMachine.StateNode
     - UnityEditor.Graphs.AnimatorControllerTool
     UnityEditor.TestRunner.dll:
     - UnityEditor.TestTools.TestRunner.Api.CallbacksHolder
@@ -67,31 +69,31 @@ ScriptsOnlyBuild:
     - Class: 104
       Script: {instanceID: 0}
     - Class: 114
-      Script: {instanceID: 1588}
+      Script: {instanceID: 1590}
     - Class: 114
-      Script: {instanceID: 1842}
+      Script: {instanceID: 1844}
     - Class: 114
-      Script: {instanceID: 2144}
+      Script: {instanceID: 2146}
     - Class: 114
-      Script: {instanceID: 2282}
+      Script: {instanceID: 2284}
     - Class: 114
-      Script: {instanceID: 2474}
+      Script: {instanceID: 2476}
     - Class: 114
-      Script: {instanceID: 2592}
+      Script: {instanceID: 2594}
     - Class: 114
-      Script: {instanceID: 2634}
+      Script: {instanceID: 2636}
     - Class: 114
-      Script: {instanceID: 2762}
+      Script: {instanceID: 2764}
     - Class: 114
-      Script: {instanceID: 2956}
+      Script: {instanceID: 2958}
     - Class: 114
-      Script: {instanceID: 3056}
+      Script: {instanceID: 3058}
     - Class: 114
-      Script: {instanceID: 3614}
+      Script: {instanceID: 3616}
     - Class: 114
-      Script: {instanceID: 4068}
+      Script: {instanceID: 4070}
     - Class: 114
-      Script: {instanceID: 4348}
+      Script: {instanceID: 4350}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -162,43 +164,43 @@ ScriptsOnlyBuild:
     - Class: 108
       Script: {instanceID: 0}
     - Class: 114
-      Script: {instanceID: 1544}
+      Script: {instanceID: 1546}
     - Class: 114
-      Script: {instanceID: 1576}
+      Script: {instanceID: 1578}
     - Class: 114
-      Script: {instanceID: 1588}
+      Script: {instanceID: 1590}
     - Class: 114
-      Script: {instanceID: 1842}
+      Script: {instanceID: 1844}
     - Class: 114
-      Script: {instanceID: 1850}
+      Script: {instanceID: 1852}
     - Class: 114
-      Script: {instanceID: 1892}
+      Script: {instanceID: 1894}
     - Class: 114
-      Script: {instanceID: 2402}
+      Script: {instanceID: 2404}
     - Class: 114
-      Script: {instanceID: 2474}
+      Script: {instanceID: 2476}
     - Class: 114
-      Script: {instanceID: 2592}
+      Script: {instanceID: 2594}
     - Class: 114
-      Script: {instanceID: 2634}
+      Script: {instanceID: 2636}
     - Class: 114
-      Script: {instanceID: 2762}
+      Script: {instanceID: 2764}
     - Class: 114
-      Script: {instanceID: 2956}
+      Script: {instanceID: 2958}
     - Class: 114
-      Script: {instanceID: 3016}
+      Script: {instanceID: 3018}
     - Class: 114
-      Script: {instanceID: 3056}
+      Script: {instanceID: 3058}
     - Class: 114
-      Script: {instanceID: 3260}
+      Script: {instanceID: 3262}
     - Class: 114
-      Script: {instanceID: 3306}
+      Script: {instanceID: 3308}
     - Class: 114
-      Script: {instanceID: 3614}
+      Script: {instanceID: 3616}
     - Class: 114
-      Script: {instanceID: 4186}
+      Script: {instanceID: 4188}
     - Class: 114
-      Script: {instanceID: 4750}
+      Script: {instanceID: 4752}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -246,7 +248,7 @@ ScriptsOnlyBuild:
   scriptHashData:
   - hash:
       serializedVersion: 2
-      Hash: 8c3d4df50bab466158ce80a4da0abeab
+      Hash: d496b8cac245818e0d6ec57999169bc3
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: NexusCtrl
@@ -600,7 +602,7 @@ ScriptsOnlyBuild:
     className: PlayableTrack
   - hash:
       serializedVersion: 2
-      Hash: 4efa05aafa12a4174976f68323ba87ec
+      Hash: b61b1e176aaa278f3a74139552dbb936
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: MonsterCtrl
@@ -890,4 +892,4 @@ ScriptsOnlyBuild:
   scenePathNames:
   - Assets/01.Scenes/Main.unity
   - Assets/01.Scenes/SampleScene.unity
-  playerPath: C:/Users/USER/Desktop/SpeedShooter/SpeedShooter.exe
+  playerPath: C:/Users/USER/Desktop/SpeedShotter/SpeedShooter.exe

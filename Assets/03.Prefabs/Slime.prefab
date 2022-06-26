@@ -104,6 +104,7 @@ MonoBehaviour:
   traceDis: 200
   attackDis: 2
   isDead: 0
+  hitCol: {fileID: 6341422565325047090}
   initHp: 22
 --- !u!136 &668589844
 CapsuleCollider:
@@ -133,7 +134,7 @@ NavMeshAgent:
   m_Acceleration: 25
   avoidancePriority: 50
   m_AngularSpeed: 500
-  m_StoppingDistance: 0.5
+  m_StoppingDistance: 0
   m_AutoTraverseOffMeshLink: 1
   m_AutoBraking: 1
   m_AutoRepath: 1

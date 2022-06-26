@@ -8,17 +8,27 @@ public class NexusCtrl : MonoBehaviour
     private GameObject sparkEffect;
     [SerializeField]
     private int MAX_HP;
+    [SerializeField]
+    private Material invincibleMat;
+    [SerializeField]
+    private Material deinvincibleMat;
     private int curHp;
     private bool isInvincible = true;
+    private MeshRenderer thisMesh;
     void Start()
     {
+        thisMesh = GetComponent<MeshRenderer>();
         curHp = MAX_HP;
+        thisMesh.material = invincibleMat;
     }
 
     private void Update()
     {
         if (gameObject.transform.childCount == 0)
+        {
             isInvincible = false;
+            thisMesh.material = deinvincibleMat;
+        }
     }
 
     private void OnCollisionEnter(Collision collision)

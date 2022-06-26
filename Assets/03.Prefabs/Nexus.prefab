@@ -131,3 +131,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   sparkEffect: {fileID: 1000011945391522, guid: 78b71003e8b357d4bbf89c8b5e5e4f0e, type: 3}
   MAX_HP: 500
+  invincibleMat: {fileID: 2100000, guid: 434e133d858391c43a283abbe75edda4, type: 2}
+  deinvincibleMat: {fileID: 2100000, guid: a0f91f34ae2cd6f4d80819a53b2c9b03, type: 2}
