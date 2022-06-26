@@ -10,6 +10,7 @@ TagManager:
   - PUNCH
   - MONSTER
   - HPBAR
+  - MAP
   layers:
   - Default
   - TransparentFX

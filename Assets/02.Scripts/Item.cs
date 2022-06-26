@@ -14,7 +14,7 @@ public class Item : MonoBehaviour
     void Start()
     {
         thismat = GetComponentsInChildren<MeshRenderer>();
-        _IsBullet = (Random.value > 0.5f);
+        _IsBullet = (Random.value > 0.35f);
         if(_IsBullet)
         {
             thismat[0].material = bullet;
@@ -38,11 +38,11 @@ public class Item : MonoBehaviour
         {
             if(_IsBullet)
             {
-                FireCtrl.Instance.ChangeBulletAndDamage(60, -3);
+                FireCtrl.Instance.ChangeBulletAndDamage(30, 0);
             }
             else
             {
-                FireCtrl.Instance.ChangeBulletAndDamage(-90, 2);
+                FireCtrl.Instance.ChangeBulletAndDamage(0, 1);
             }
             Destroy(gameObject);
         }

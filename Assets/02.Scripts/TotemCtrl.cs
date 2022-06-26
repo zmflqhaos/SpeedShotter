@@ -40,7 +40,7 @@ public class TotemCtrl : MonoBehaviour
                 CancelInvoke("CreateMonster");
 
                 GameManger.Instance().DisplayScore(4999);
-                gameObject.SetActive(false);
+                Destroy(gameObject);
             }
         }
     }

@@ -56,6 +56,7 @@
     <Analyzer Include="C:\Program Files (x86)\Microsoft Visual Studio Tools for Unity\16.0\Analyzers\Microsoft.Unity.Analyzers.dll" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Assets\02.Scripts\NexusCtrl.cs" />
     <Compile Include="Assets\02.Scripts\Item.cs" />
     <Compile Include="Assets\02.Scripts\FollowCamera.cs" />
     <Compile Include="Assets\02.Scripts\TotemCtrl.cs" />
@@ -65,17 +66,17 @@
     <Compile Include="Assets\02.Scripts\UIManger.cs" />
     <Compile Include="Assets\02.Scripts\BulletCtrl.cs" />
     <Compile Include="Assets\03.Prefabs\EffectExamples\Shared\Scripts\DecalDestroyer.cs" />
-    <Compile Include="Assets\02.Scripts\DashTrs.cs" />
     <Compile Include="Assets\03.Prefabs\EffectExamples\Shared\Scripts\ParticleExamples.cs" />
     <Compile Include="Assets\02.Scripts\PlayerController.cs" />
-    <Compile Include="Assets\02.Scripts\BarrelCtrl.cs" />
     <Compile Include="Assets\03.Prefabs\EffectExamples\Shared\Scripts\ParticleCollision.cs" />
     <Compile Include="Assets\02.Scripts\MonsterCtrl.cs" />
     <Compile Include="Assets\03.Prefabs\EffectExamples\Shared\Scripts\GunShoot.cs" />
     <Compile Include="Assets\02.Scripts\MyGizmo.cs" />
-    <Compile Include="Assets\02.Scripts\RemoveBullet.cs" />
     <Compile Include="Assets\02.Scripts\FireCtrl.cs" />
     <Compile Include="Assets\03.Prefabs\EffectExamples\Shared\Scripts\GunAim.cs" />
+    <Compile Include="Assets\02.Scripts\MapEffect.cs" />
+    <Compile Include="Assets\02.Scripts\SceneMove.cs" />
+    <Compile Include="Assets\02.Scripts\Finish.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />

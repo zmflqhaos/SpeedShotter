@@ -61,6 +61,8 @@ public class MonsterCtrl : MonoBehaviour
     {
         while(!isDead)
         {
+            if (GameManger.Instance().IsOver)
+                state = State.DIE;
             yield return new WaitForSeconds(0.3f);
 
             if (state == State.DIE)

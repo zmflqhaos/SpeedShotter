@@ -45,13 +45,6 @@ public class FireCtrl : MonoBehaviour
     [SerializeField]
     private int current_damage = 10;
 
-    private bool _isDead;
-    public bool IsDead
-    {
-        get { return _isDead; }
-        set { _isDead = value; }
-    }
-
     public int CUR_DAMAGE
     {
         get { return current_damage; }
@@ -81,13 +74,11 @@ public class FireCtrl : MonoBehaviour
 
     void Update()
     {
-        if (_isDead) return;
+        if (GameManger.Instance().IsOver) return;
         // 마우스 왼쪽 버튼 클릭 했을 때, 
         if( Input.GetMouseButton(0) && cool<=0 && current_magazine>0&&!_isReloading)
         {
             Fire();
-            StartCoroutine(ShowMuzzleFlash());
-            cool = 0.1f;
         }
         if (Input.GetKey(KeyCode.R) && !_isReloading && current_magazine != max_magazine && current_bullet>0)
         {
@@ -109,7 +100,7 @@ public class FireCtrl : MonoBehaviour
         _isReloading = true;
         yield return new WaitForSeconds(reloadTime);
         audio.PlayOneShot(endReloadSound, 1f);
-        if (current_bullet+ current_bullet + current_magazine >= 30)
+        if (current_bullet + current_magazine >= 30)
         {
             current_bullet += (current_magazine - max_magazine);
             current_magazine = max_magazine;
@@ -125,6 +116,9 @@ public class FireCtrl : MonoBehaviour
 
     void Fire()
     {
+        if (Time.timeScale == 0) return;
+        StartCoroutine(ShowMuzzleFlash());
+        cool = 0.1f;
         // 프리팹을 인스턴스화하여 생성
         Instantiate(bulletPrefab, firePos.position, camView.rotation);
         soundMix = Random.Range(0.8f, 1.2f);
