@@ -89,7 +89,6 @@ public class PlayerController : MonoBehaviour
         if(other.CompareTag("PUNCH")&&currHp>=0f)
         {
             currHp -= 10f;
-            Debug.Log($"Player HP = {currHp}");
             DisplayHP();
             if(currHp<=0f)
             {
@@ -100,7 +99,6 @@ public class PlayerController : MonoBehaviour
 
     private void PlayerDie()
     {
-        Debug.Log("DIE");
         GameManger.Instance().IsOver = true;
         GameManger.Instance().isClear = false;
         GameObject[] monsters = GameObject.FindGameObjectsWithTag("MONSTER");
